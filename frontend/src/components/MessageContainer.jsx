@@ -24,7 +24,6 @@ const MessageContainer = () => {
 				setMessages((prev) => [...prev, message]);
 			}
 
-			// make a sound if the window is not focused
 			if (!document.hasFocus()) {
 				const sound = new Audio(messageSound);
 				sound.play();

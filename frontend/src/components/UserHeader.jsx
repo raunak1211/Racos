@@ -12,7 +12,7 @@ import useFollowUnfollow from "../hooks/useFollowUnfollow";
 
 const UserHeader = ({ user }) => {
 	const toast = useToast();
-	const currentUser = useRecoilValue(userAtom); // logged in user
+	const currentUser = useRecoilValue(userAtom); 
 	const { handleFollowUnfollow, following, updating } = useFollowUnfollow(user);
 
 	const copyURL = () => {
@@ -38,7 +38,7 @@ const UserHeader = ({ user }) => {
 					<Flex gap={2} alignItems={"center"}>
 						<Text fontSize={"sm"}>{user.username}</Text>
 						<Text fontSize={"xs"} bg={"gray.dark"} color={"gray.light"} p={1} borderRadius={"full"}>
-							threads.net
+							racos.net
 						</Text>
 					</Flex>
 				</Box>

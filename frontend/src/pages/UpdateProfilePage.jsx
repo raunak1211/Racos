@@ -15,8 +15,10 @@ import { useRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import usePreviewImg from "../hooks/usePreviewImg";
 import useShowToast from "../hooks/useShowToast";
+import { useNavigate } from "react-router-dom";
 
 export default function UpdateProfilePage() {
+	const navigate = useNavigate();
 	const [user, setUser] = useRecoilState(userAtom);
 	const [inputs, setInputs] = useState({
 		name: user.name,
@@ -89,7 +91,7 @@ export default function UpdateProfilePage() {
 					<FormControl>
 						<FormLabel>Full name</FormLabel>
 						<Input
-							placeholder='John Doe'
+							placeholder='Raunak Pal'
 							value={inputs.name}
 							onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
@@ -99,7 +101,7 @@ export default function UpdateProfilePage() {
 					<FormControl>
 						<FormLabel>User name</FormLabel>
 						<Input
-							placeholder='johndoe'
+							placeholder='raunak'
 							value={inputs.username}
 							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 							_placeholder={{ color: "gray.500" }}
@@ -144,6 +146,7 @@ export default function UpdateProfilePage() {
 							_hover={{
 								bg: "red.500",
 							}}
+							onClick={()=> navigate("/")}
 						>
 							Cancel
 						</Button>
